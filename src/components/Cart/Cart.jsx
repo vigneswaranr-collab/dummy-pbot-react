@@ -70,7 +70,7 @@ const Cart = ({
             })}
           </div>
           <div className="cart-total product-cart">
-            <h2>Cart Summary</h2>
+            <h2>Cart List</h2>
             <div className="d_flex">
               <h4>Total Price :</h4>
               <h3>${totalPrice}.00</h3>
