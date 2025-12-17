@@ -2,7 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./allproducts.css";
 
-const Allproducts = ({ allProductsData, addToCart }) => {
+const Allproducts = ({ allProductsData, addToCart, favoriteItems, addToFavorite }) => {
+  // Check if a product is in favorites
+  const isFavorite = (productId) => {
+    return favoriteItems?.some((item) => item.id === productId);
+  };
+
   return (
     <>
       <h1 className="page-header">All Products</h1>
@@ -14,6 +19,13 @@ const Allproducts = ({ allProductsData, addToCart }) => {
                 <div className="img">
                   <span className="discount">{product.discount}% Off</span>
                   <img src={product.img} alt="product-image" />
+                  <div className="product-like">
+                    <i
+                      className={isFavorite(product.id) ? "fa-solid fa-heart" : "fa-regular fa-heart"}
+                      onClick={() => addToFavorite(product)}
+                      style={{ color: isFavorite(product.id) ? "#e94560" : "inherit", cursor: "pointer" }}
+                    ></i>
+                  </div>
                 </div>
                 <div className="product-details">
                   <h3>{product.name}</h3>

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 // setting up arrows to display next and previous arrows and make them work
@@ -24,10 +24,10 @@ const PrevArrow = (props) => {
   );
 };
 
-const Flashcard = ({ productItems, addToCart }) => {
-  const [count, setCount] = useState(0);
-  const increment = () => {
-    setCount(count + 1);
+const Flashcard = ({ productItems, addToCart, favoriteItems, addToFavorite }) => {
+  // Check if a product is in favorites
+  const isFavorite = (productId) => {
+    return favoriteItems?.some((item) => item.id === productId);
   };
 
   const settings = {
@@ -82,8 +82,11 @@ const Flashcard = ({ productItems, addToCart }) => {
                   <span className="discount">{product.discount}% Off</span>
                   <img src={product.img} alt="" />
                   <div className="product-like">
-                    <label>{count}</label> <br />
-                    <i className="fa-regular fa-heart" onClick={increment}></i>
+                    <i
+                      className={isFavorite(product.id) ? "fa-solid fa-heart" : "fa-regular fa-heart"}
+                      onClick={() => addToFavorite(product)}
+                      style={{ color: isFavorite(product.id) ? "#e94560" : "inherit", cursor: "pointer" }}
+                    ></i>
                   </div>
                 </div>
                 <div className="product-details">

@@ -75,3 +75,36 @@
   color: #ffcd4e;
   margin: 5px 5px 5px 0;
 }
+
+.single-product-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.favorite-btn {
+  height: 50px;
+  padding: 0 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 2px solid #e94560;
+  color: #e94560;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.favorite-btn:hover {
+  background-color: #e94560;
+  color: white;
+}
+
+.favorite-btn.favorited {
+  background-color: #e94560;
+  color: white;
+}
+
+.favorite-btn.favorited:hover {
+  background-color: #d13350;
+}

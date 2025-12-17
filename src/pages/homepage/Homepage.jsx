@@ -10,17 +10,17 @@ import Shop from "../../components/Shop/Shop";
 import Features from "../../components/Features/Features";
 import Specialoffer from "../../components/Specialoffer/SpecialOffer";
 
-const Homepage = ({ productItems, addToCart, cartItems, shopItems }) => {
+const Homepage = ({ productItems, addToCart, cartItems, shopItems, favoriteItems, addToFavorite }) => {
   // Homepage consists of different smaller components I made so we can reuse them later when needed and sending different components necessary props to use them in there
   return (
     <>
-      <Header cartItems={cartItems} />
+      <Header cartItems={cartItems} favoriteItems={favoriteItems} />
       <Mainpage />
-      <Flashdeals productItems={productItems} addToCart={addToCart} />
+      <Flashdeals productItems={productItems} addToCart={addToCart} favoriteItems={favoriteItems} addToFavorite={addToFavorite} />
       <TopCategories />
       <Newarrivals />
       <Discount />
-      <Shop shopItems={shopItems} addToCart={addToCart} />
+      <Shop shopItems={shopItems} addToCart={addToCart} favoriteItems={favoriteItems} addToFavorite={addToFavorite} />
       <Specialoffer />
       <Features />
       <Footer />

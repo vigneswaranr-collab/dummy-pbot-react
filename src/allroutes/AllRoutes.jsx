@@ -6,6 +6,7 @@ import Loginpage from "../pages/loginpage/Loginpage";
 import Registrationpage from "../pages/registrationpage/Registrationpage";
 import Allproductspage from "../pages/all-productspage/Allproductspage";
 import Singleproductpage from "../pages/product-details/Singleproductpage";
+import Favoritespage from "../pages/favoritespage/Favoritespage";
 import ErrorNotFound from "../components/ErrorNotFoundPage/ErrorNotFound";
 import ScrollToTop from "../components/ScrollToTop";
 
@@ -18,6 +19,9 @@ const AllRoutes = ({
   checkOut,
   removeFromCart,
   allProductsData,
+  favoriteItems,
+  addToFavorite,
+  removeFromFavorite,
 }) => {
   return (
     // setting up all the routes here with react-router dom and sending necessary props to each child element all the routing is being done here
@@ -33,6 +37,8 @@ const AllRoutes = ({
               cartItems={cartItems}
               addToCart={addToCart}
               shopItems={shopItems}
+              favoriteItems={favoriteItems}
+              addToFavorite={addToFavorite}
             />
           }
         />
@@ -45,6 +51,18 @@ const AllRoutes = ({
               deleteFromCart={deleteFromCart}
               checkOut={checkOut}
               removeFromCart={removeFromCart}
+              favoriteItems={favoriteItems}
+            />
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <Favoritespage
+              cartItems={cartItems}
+              favoriteItems={favoriteItems}
+              removeFromFavorite={removeFromFavorite}
+              addToCart={addToCart}
             />
           }
         />
@@ -60,6 +78,8 @@ const AllRoutes = ({
               cartItems={cartItems}
               allProductsData={allProductsData}
               addToCart={addToCart}
+              favoriteItems={favoriteItems}
+              addToFavorite={addToFavorite}
             />
           }
         />
@@ -70,6 +90,8 @@ const AllRoutes = ({
               cartItems={cartItems}
               allProductsData={allProductsData}
               addToCart={addToCart}
+              favoriteItems={favoriteItems}
+              addToFavorite={addToFavorite}
             />
           }
         />

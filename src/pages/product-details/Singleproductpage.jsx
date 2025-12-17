@@ -3,11 +3,11 @@ import Singleproduct from "../../components/Singleproduct/Singleproduct";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-const Singleproductpage = ({ allProductsData, cartItems, addToCart }) => {
+const Singleproductpage = ({ allProductsData, cartItems, addToCart, favoriteItems, addToFavorite }) => {
   return (
     <>
-      <Header cartItems={cartItems} />
-      <Singleproduct allProductsData={allProductsData} addToCart={addToCart} />
+      <Header cartItems={cartItems} favoriteItems={favoriteItems} />
+      <Singleproduct allProductsData={allProductsData} addToCart={addToCart} favoriteItems={favoriteItems} addToFavorite={addToFavorite} />
       <Footer />
     </>
   );

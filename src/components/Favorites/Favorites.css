@@ -1,0 +1,148 @@
+.favorites-items {
+  background: #f6f9fc;
+  min-height: 100vh;
+  padding: 30px 0;
+}
+
+.favorites-heading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a2e;
+}
+
+.favorites-details {
+  width: 100%;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.favorites-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: rgb(3 0 71/ 9%) 0 1px 3px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.favorites-card:hover {
+  transform: translateY(-5px);
+}
+
+.favorites-img {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.favorites-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.favorites-img .discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e94560;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.favorites-img .remove-favorite {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.favorites-img .remove-favorite i {
+  color: #e94560;
+  font-size: 16px;
+}
+
+.favorites-img .remove-favorite:hover {
+  background: #e94560;
+}
+
+.favorites-img .remove-favorite:hover i {
+  color: white;
+}
+
+.favorites-info {
+  padding: 15px;
+}
+
+.favorites-info h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.favorites-info h3:hover {
+  color: #e94560;
+}
+
+.favorites-info .rate {
+  margin-bottom: 10px;
+}
+
+.favorites-info .rate i {
+  color: #ffcd4e;
+  font-size: 12px;
+}
+
+.favorites-info .price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.favorites-info .price h4 {
+  color: #e94560;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.favorites-info .price button {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  background: #e94560;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorites-info .price button:hover {
+  background: #0f3460;
+}
+
+.no-items {
+  text-align: center;
+  padding: 50px;
+  font-size: 20px;
+  color: #666;
+}

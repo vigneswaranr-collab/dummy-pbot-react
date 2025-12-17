@@ -17,6 +17,9 @@ function App() {
   // using useState hooks to change and store items in  the cart here
   const [cartItems, setCartItems] = useState([]);
 
+  // using useState hooks to change and store favorite items
+  const [favoriteItems, setFavoriteItems] = useState([]);
+
   // This is a function to add items in the cart it takes the product and checks within the cart to see if there's already added in cart
   // if it already has it it increases the quantity by 1 with each click, if it doesn't exist in cart it adds it to the cart
   const addToCart = (product) => {
@@ -118,6 +121,24 @@ function App() {
     }
   };
 
+  // This function adds or removes an item from favorites (toggle functionality)
+  const addToFavorite = (product) => {
+    const productExists = favoriteItems.find((item) => item.id === product.id);
+    if (productExists) {
+      setFavoriteItems(favoriteItems.filter((item) => item.id !== product.id));
+      toast.success("Removed from favorites");
+    } else {
+      setFavoriteItems([...favoriteItems, product]);
+      toast.success("Added to favorites");
+    }
+  };
+
+  // This function removes an item from favorites
+  const removeFromFavorite = (product) => {
+    setFavoriteItems(favoriteItems.filter((item) => item.id !== product.id));
+    toast.success("Removed from favorites");
+  };
+
   return (
     // All the functions are in App.jsx but we have to call these in other components as well so sending all these functions and datas as props to child elements so we can use them there
     <>
@@ -131,6 +152,9 @@ function App() {
         deleteFromCart={deleteFromCart}
         checkOut={checkOut}
         allProductsData={allProductsData}
+        favoriteItems={favoriteItems}
+        addToFavorite={addToFavorite}
+        removeFromFavorite={removeFromFavorite}
       />
     </>
   );

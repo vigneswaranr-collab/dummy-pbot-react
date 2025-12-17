@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Search = ({ cartItems }) => {
+const Search = ({ cartItems, favoriteItems }) => {
   window.addEventListener("scroll", function () {
     const search = document.querySelector(".search");
     search.classList.toggle("active", window.scrollY > 100);
@@ -27,6 +27,12 @@ const Search = ({ cartItems }) => {
             <Link aria-label="Login page" to="/login">
               <i className="fa fa-user icon-circle"></i>
             </Link>
+            <div className="cart">
+              <Link to="/favorites">
+                <i className="fa fa-heart icon-circle"></i>
+                <span>{favoriteItems?.length || 0}</span>
+              </Link>
+            </div>
             <div className="cart">
               <Link to="/cart">
                 <i className="fa fa-shopping-bag icon-circle"></i>

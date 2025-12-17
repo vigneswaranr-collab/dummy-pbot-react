@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Shopcart from "./Shopcart";
 import "./shop.css";
 
-const Shop = ({ shopItems, addToCart }) => {
+const Shop = ({ shopItems, addToCart, favoriteItems, addToFavorite }) => {
   const navigate = useNavigate();
   const handleRedirect = () => {
     // Add the path you want to redirect to
@@ -28,7 +28,7 @@ const Shop = ({ shopItems, addToCart }) => {
               </div>
             </div>
             <div className="product-content">
-              <Shopcart shopItems={shopItems} addToCart={addToCart} />
+              <Shopcart shopItems={shopItems} addToCart={addToCart} favoriteItems={favoriteItems} addToFavorite={addToFavorite} />
             </div>
           </div>
         </div>
