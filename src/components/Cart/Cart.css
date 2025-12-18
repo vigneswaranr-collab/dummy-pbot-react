@@ -33,7 +33,7 @@
 .cart-total .checkout {
   height: fit-content;
   width: fit-content;
-  background-color: #007bff;
+  background-color: orange;
   color: white;
   padding: 15px;
   cursor: pointer;
